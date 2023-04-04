@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            function Convert(){
+            var fahr = parseInt(document.getElementById("Fahrenheit").value);
+            var conv = ((fahr - 32) * 5) / 9;
+            document.getElementById("res").innerHTML = "Em graus Celsius a temperatura equivale a<br> " + conv + "</br>.";
+            }
+        </script>
+
+        <p><font size = "4">
+            <font face = "Arial"> 
+                Conversão de Fahrenheit para Celsius
+            </font></font>
+        </p>
+            <input type = "text" id = "Fahrenheit"> <br> <br>
+            <button type = "button" onclick = "Convert()">Converter</button> 
+            <p id = "res"></p>
+    </body>
+</html>

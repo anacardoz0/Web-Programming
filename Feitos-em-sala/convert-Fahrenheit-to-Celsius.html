@@ -5,7 +5,7 @@
             function Convert(){
             var fahr = parseInt(document.getElementById("Fahrenheit").value);
             var conv = ((fahr - 32) * 5) / 9;
-            document.getElementById("res").innerHTML = "Em graus Celsius a temperatura equivale a<br> " + conv + "</br>.";
+            document.getElementById("res").innerHTML = "Em graus Celsius a temperatura equivale a <br>" + conv.toFixed(2) + "</br>.";
             }
         </script>
 

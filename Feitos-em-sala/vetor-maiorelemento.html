@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Maior elemento de um vetor</title>
+</head>
+<body>
+    <h3>Implemente uma função para identificar o maior elemento de um vetor</h3>
+    <script>
+        function MaiorElemento(Vetor){
+            var N = Vetor.length;          
+            var X = Vetor[0];
+
+            for(var i = 1; i < N; i++){
+               if(Vetor[i] > X) [X = Vetor[i]]; 
+
+            }
+
+            return(X);
+        }
+
+        var T = [2, 3, 4, -1, 7, 3, 3, 5];
+        var Maior = MaiorElemento(T);    //chamando a função e copia tudo que está no var T
+        console.log ('Maior elemento = ', Maior);
+    </script>
+</body>
+</html>

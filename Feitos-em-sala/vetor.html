@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Vetor</title>
+</head>
+<body>
+    <script>
+        function Mediavetor(Vetor){
+            var N = Vetor.length;         //Calculando o tamanho do vetor 
+            var Soma = 0;
+
+            for(var i = 0; i < N; i++){
+                Soma = Soma + Vetor[i]; 
+            }
+
+            return(Soma / N);
+        }
+
+        var T = [2, 3, 4, -1, 7, 3, 3, 5];
+        var Media = Mediavetor(T);    //chamando a função e copia tudo que está no var T
+        console.log ('Media = ', Media);
+    </script>
+</body>
+</html>

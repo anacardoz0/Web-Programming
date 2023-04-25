@@ -1,0 +1,81 @@
+<!DOCTYPE HTML> 
+<html> 
+
+<head>
+    <script>
+
+        // Factory
+
+        function RecuperarDados() {
+
+            var C, i, n;
+
+            return({
+                C : parseFloat(document.getElementById("_capital").value),
+                i : parseFloat(document.getElementById("_taxa").value),
+                n : parseFloat(document.getElementById("_prazo").value),
+                tipo : document.querySelector("input[name=tipo]:checked").value
+            });
+        }
+
+        // Função evocada ao se clicar em calcular
+
+        function CalcularMontante() {
+            var Dados = RecuperarDados();
+
+            if(Dados.tipo == "composto") {
+                var M = Dados.C * (1 + Dados.i)**Dados.n;
+                var J = M - Dados.C;
+            } else {
+                var M = Dados.C * (1 + Dados.i*Dados.n);
+                var J = M - Dados.C;
+            }
+
+            var str = "<center>O montante da aplicação é de ";
+            str = str + "<font color = red>R$ " + M.toFixed(2) + "</font>";
+            str = str + " e os juros auferidos são de ";
+            str = str + "<font color = red>R$ " + J.toFixed(2) + "</font>.</center> ";
+           
+            document.getElementById("res").innerHTML = str;
+
+        }
+    </script> 
+         
+</head> 
+
+<body> 
+
+    <table border = "0" width = "450px">
+        <tr>
+            <td>Capital</td>
+            <td><input type="text" id="_capital"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Taxa</td>
+            <td><input type="text" id="_taxa"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Prazo</td>
+            <td><input type="text" id="_prazo"></td>
+        </tr>
+        <tr>
+            <td>Tipo de juros</td>
+            <td>
+                <input type="radio" id="_tipo" name = "tipo" value = "composto">Composto
+                <input type="radio" id="_tipo" name = "tipo" value = "simples">Simples                
+            </td>
+            <td><button type="button" onclick="CalcularMontante()">Calcular</button></td>
+        </tr>
+        <tr>
+            <td colspan="3" width = "450px">
+                <p id="res"></p>
+            </td>
+        </tr>
+
+
+    </table>
+
+</body> 
+</html>

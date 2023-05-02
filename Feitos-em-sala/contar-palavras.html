@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contar Palavras</title>
+</head>
+<body>
+
+    <script>
+        function Contando(text){
+            var palavras = 0;
+            for(var c of text){
+                if(separador(c)){
+                    palavras ++;
+                }
+            }
+            return(palavras);
+        }
+
+        function contarPalavras(text){
+            var Texto = document.getElementById("_texto").value
+            var N = Contando(Texto);
+            console.log(N); 
+        }
+
+        function separador(c){
+            var separadores = [" ", "\t", "\n", "\r", ", ", ";", ".", "!", "?"];
+            return separadores.includes(c);
+        }
+    </script>
+
+    
+<table>
+    <tr>
+        <td> Digite uma frase: </td>
+        <td><input type = "text"  id = "_texto"></td>
+        <td><button type = "button" onclick = "contarPalavras()">Contar</button></td>
+    </tr>
+</table>
+</body>
+</html>

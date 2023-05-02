@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Checklist</title>
+</head>
+<body>
+    <fieldset>
+        <legend><b>Marque os estados que você já visitou: </b></legend>
+        <input type = "checkbox" id = "AC" name = "_estado" value = "906876">
+        <label for = "Acre">Acre</label> <br>
+
+        <input type = "checkbox" id = "AL" name = "_estado" value = "3365351">
+        <label for = "Alagoas">Alagoas</label> <br>
+
+        <input type = "checkbox" id = "AP" name = "_estado" value = " 877613">
+        <label for = "Amapá">Amapá</label> <br>
+
+        <input type = "checkbox" id = "AM" name = "_estado" value = "4.269.995">
+        <label for = "Amazonas">Amazonas</label> <br>
+
+        <input type = "checkbox" id = "BA" name = "_estado" value = "14985284">
+        <label for = "Bahia">Bahia</label> <br>
+
+
+        <button id = "montar-lista" class = "btnMontarLista">Verificar</button> <br>
+        <p id = "Resposta">A população do estado selecionado é: </p>
+    </fieldset>
+
+    <script>
+        var montarLista = document.querySelector("#montar-lista");
+        montarLista.addEventListener("click", function(){
+            var Str = "";
+            var checkboxes = document.querySelectorAll("input[type=checkbox]:checked");
+            for(var i = 0; i < checkbox.length; i++)
+                Str = Str + parseInt(checkboxes[i].value);
+            document.getElementById("Resposta").innerHTML = Str;
+        });
+    </script>
+</body>
+</html>
